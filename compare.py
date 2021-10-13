@@ -16,7 +16,7 @@ for row in range(dfDiff.shape[0]):
         except:
             dfDiff.iloc[row,col] = ('{}-->{}').format(value_OLD, 'NaN')
 
-writer = pd.ExcelWriter("emp2.xlsx", engine='xlsxwriter')
+writer = pd.ExcelWriter("compare.xlsx", engine='xlsxwriter')
 
 dfDiff.to_excel(writer, sheet_name='DIFF', index=False)
 df_NEW.to_excel(writer, sheet_name='emp1.xlsx', index=False)
